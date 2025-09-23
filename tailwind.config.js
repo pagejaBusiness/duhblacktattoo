@@ -22,6 +22,9 @@ export default {
           dark: "#6B7280", // cinza mais escuro para balancear
         },
       },
+      fontFamily: {
+        cloister: ["CloisterBlack", "serif"],
+      },
     },
   },
   plugins: [],

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "CloisterBlack";
+  src: url("./Fonts/CloisterBlackLight-axjg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

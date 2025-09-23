@@ -1,10 +1,10 @@
 import "./App.css";
-
+import Herosection from "./components/Herosection.jsx";
 function App() {
   return (
-    <div>
-      <p className="text">Sua página começa aqui</p>
-    </div>
+    <section>
+      <Herosection />
+    </section>
   );
 }
 
