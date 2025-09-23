@@ -46,14 +46,14 @@ function Herosection() {
             e dedicação para eternizar momentos e sentimentos.
           </motion.p>
 
-          <motion.button
-            className="mt-6 rounded border-2 border-white px-6 py-2 md:px-8 md:py-3 font-semibold uppercase text-sm md:text-base tracking-wide transition-colors duration-300 hover:bg-purple-light hover:text-white"
+          <motion.a
+            className="mt-6 inline-block rounded border-2 border-white px-6 py-2 md:px-8 md:py-3 font-semibold uppercase text-sm md:text-base tracking-wide transition-colors duration-300 hover:bg-purple-light hover:text-white"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
           >
             Agende seu horário
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

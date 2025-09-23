@@ -1,12 +1,15 @@
 import "./App.css";
-import Herosection from "./components/Herosection.jsx";
-import Navbar from "./components/Navbar.jsx";
+import Navbar from "./components/Navbar";
+import Herosection from "./components/Herosection";
+
 function App() {
   return (
-    <section>
+    <div>
       <Navbar />
-      <Herosection />
-    </section>
+      <section id="home">
+        <Herosection />
+      </section>
+    </div>
   );
 }
 
