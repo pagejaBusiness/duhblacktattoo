@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 group">
             <h1 className="text-3xl font-bold text-white tracking-wide cursor-pointer transition-all duration-300 group-hover:scale-105">
-              <span className="italic font-light">DuhBlack </span>
+              <span className="italic font-light">Duh Black </span>
               <span className="text-purple-light ml-1 font-black relative">
                 Tattoo
                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple to-purple-light transition-all duration-500 group-hover:w-full"></div>
