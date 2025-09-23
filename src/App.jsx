@@ -1,9 +1,14 @@
 import "./App.css";
+import Navbar from "./components/Navbar.jsx";
+import Teste from "./components/teste.jsx";
 
 function App() {
   return (
     <div>
-      <p className="text">Sua página começa aqui</p>
+      <Navbar />
+      <section id="home">
+        <Teste />
+      </section>
     </div>
   );
 }
