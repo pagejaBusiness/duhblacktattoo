@@ -8,10 +8,3 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-@font-face {
-  font-family: "CloisterBlack";
-  src: url("./Fonts/CloisterBlackLight-axjg.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
