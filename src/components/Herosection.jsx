@@ -1,9 +1,8 @@
-"use client";
 import { motion } from "framer-motion";
 
 function Herosection() {
   return (
-    <section>
+    <section id="home">
       <div
         className="relative flex h-screen w-full items-center justify-start bg-cover bg-center px-6 md:px-16 lg:px-24"
         style={{
@@ -22,13 +21,13 @@ function Herosection() {
         </div>
 
         <motion.div
-          className="relative z-20 text-white max-w-2xl space-y-6"
+          className="relative z-20 text-white max-w-lg md:max-w-2xl space-y-4 md:space-y-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <motion.h1
-            className="font-bold uppercase sm:text-5xl md:text-6xl font-cloister leading-tight"
+            className="font-bold uppercase text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-cloister leading-tight"
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -38,7 +37,7 @@ function Herosection() {
           </motion.h1>
 
           <motion.p
-            className="text-lg sm:text-2xl leading-relaxed"
+            className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
@@ -48,7 +47,7 @@ function Herosection() {
           </motion.p>
 
           <motion.button
-            className="mt-6 rounded border-2 border-white px-8 py-3 font-semibold uppercase tracking-wide transition-colors duration-300 hover:bg-purple-light hover:text-white"
+            className="mt-6 rounded border-2 border-white px-6 py-2 md:px-8 md:py-3 font-semibold uppercase text-sm md:text-base tracking-wide transition-colors duration-300 hover:bg-purple-light hover:text-white"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
