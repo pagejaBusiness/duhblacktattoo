@@ -22,7 +22,7 @@ export default function About() {
               >
                 <img
                   src="https://res.cloudinary.com/pageja/image/upload/v1758673879/sobre_zseirt.jpg"
-                  alt="Eduardo Souza"
+                  alt="Eduardo Sousa"
                 />
               </motion.div>
             </div>
@@ -65,7 +65,7 @@ export default function About() {
                 className="text-5xl font-bold tracking-tight"
                 style={{ color: "#F9FAFB" }}
               >
-                Eduardo Souza
+                Eduardo Sousa
               </h2>
             </motion.div>
 
