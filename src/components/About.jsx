@@ -9,6 +9,30 @@ export default function About() {
       style={{ backgroundColor: "#0B0B0F" }}
     >
       <div className="max-w-6xl mx-auto">
+        {/* Section Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-4 mb-16 flex-wrap justify-center"
+        >
+          <div
+            className="hidden sm:block w-12 h-px"
+            style={{ backgroundColor: "#7C3AED" }}
+          ></div>
+          <span
+            className="text-sm font-bold tracking-widest uppercase"
+            style={{ color: "#7C3AED" }}
+          >
+            Sobre o Artista
+          </span>
+          <div
+            className="w-full sm:w-12 h-px"
+            style={{ backgroundColor: "#7C3AED" }}
+          ></div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Artist Photo */}
           <div className="relative">
