@@ -1,5 +1,8 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,17 +24,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navbarClasses = scrolled
-    ? "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out bg-dark/95 backdrop-blur-md shadow-2xl border-b border-purple-light/20"
-    : "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out bg-transparent";
-
-  const mobileMenuClasses = isMenuOpen
-    ? "md:hidden overflow-hidden transition-all duration-500 ease-out max-h-96 opacity-100"
-    : "md:hidden overflow-hidden transition-all duration-500 ease-out max-h-0 opacity-0";
+  const navbarClasses = `
+  fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out
+  ${
+    scrolled
+      ? "md:bg-dark/90 md:backdrop-blur-md md:shadow-2xl md:border-b md:border-purple-light/20 bg-transparent backdrop-blur-md shadow-2xl border-b border-purple-light/20"
+      : "bg-transparent backdrop-blur-0 md:backdrop-blur-0"
+  }
+`;
 
   return (
     <nav className={navbarClasses}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 group">
@@ -52,9 +56,6 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className="relative px-4 py-2 text-sm font-medium tracking-wider text-white transition-all duration-300 group hover:text-purple-light rounded-lg hover:bg-purple-light/10"
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                  }}
                 >
                   {item.name}
                   <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-purple to-purple-light transition-all duration-300 group-hover:w-3/4 transform -translate-x-1/2 rounded-full"></span>
@@ -91,30 +92,35 @@ export default function Navbar() {
       </div>
 
       {/* Menu Mobile */}
-      <div
-        className={`md:hidden fixed top-20 left-0 right-0 z-40 transition-opacity duration-300 ${
-          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-      >
-        {/* Fundo com blur e sombra */}
-        <div className="absolute inset-0 bg-dark/98 backdrop-blur-md border-t border-purple-light/20 shadow-2xl"></div>
-
-        {/* Conteúdo do menu */}
-        <div className="relative px-4 py-6 space-y-2">
-          {navItems.map((item, index) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-6 py-4 text-base font-medium tracking-wider text-white hover:text-purple-light hover:bg-purple-light/10 transition-all duration-300 rounded-xl text-center relative group"
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              {item.name}
-              <div className="absolute bottom-2 left-1/2 w-0 h-0.5 bg-gradient-to-r from-purple to-purple-light transition-all duration-300 group-hover:w-1/3 transform -translate-x-1/2 rounded-full"></div>
-            </a>
-          ))}
-        </div>
-      </div>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed top-20 left-0 right-0 z-40"
+          >
+            <div className="bg-dark/90 backdrop-blur-md shadow-2xl relative px-4 py-6 space-y-2">
+              {navItems.map((item, index) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="block px-6 py-4 text-base font-medium tracking-wider text-white hover:text-purple-light hover:bg-purple-light/20 transition-all duration-300 rounded-xl text-center relative group border border-purple-light/10"
+                >
+                  {item.name}
+                  <div className="absolute bottom-2 left-1/2 w-0 h-0.5 bg-gradient-to-r from-purple to-purple-light transition-all duration-300 group-hover:w-1/3 transform -translate-x-1/2 rounded-full"></div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
