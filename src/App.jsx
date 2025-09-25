@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Herosection from "./components/Herosection";
 import About from "./components/About";
+import Gallery from "./components/Gallery";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       </section>
       <section id="about">
         <About />
+      </section>
+      <section>
+        <Gallery id="gallery" />
       </section>
     </div>
   );
