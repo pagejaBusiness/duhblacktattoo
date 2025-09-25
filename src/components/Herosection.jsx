@@ -51,6 +51,7 @@ function Herosection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+            href="#contact"
           >
             Agende seu horário
           </motion.a>
