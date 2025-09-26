@@ -65,13 +65,17 @@ function Gallery() {
 
       {/* Título Galeria */}
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 30, scale: 0.8 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
-        className="absolute  top-10 z-20 text-4xl sm:text-6xl font-bold text-purple-dark text-center w-full "
+        className="absolute top-8 z-20 w-full text-center
+             text-5xl sm:text-7xl font-extrabold uppercase
+             text-purple-400 
+             drop-shadow-[0_0_25px_#a855f7]
+             tracking-widest"
       >
-        Galeria
+        GALERIA
       </motion.h2>
 
       <div className="relative z-10 w-full max-w-7xl flex flex-col items-center  ">

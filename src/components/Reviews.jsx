@@ -31,6 +31,9 @@ export default function Reviews() {
     {
       url: "https://res.cloudinary.com/pageja/image/upload/v1758847134/review03_ytjwdm.jpg",
     },
+    {
+      url: "https://res.cloudinary.com/pageja/image/upload/v1758906683/WhatsApp_Image_2025-09-26_at_09.08.34_ch0x2m.jpg",
+    },
   ];
 
   return (
@@ -60,7 +63,7 @@ export default function Reviews() {
           {screenshots.map((screenshot, index) => (
             <motion.div
               key={index}
-              className="p-6 bg-dark-lighter rounded-lg border border-gray-dark relative min-h-[400px] flex flex-col items-center justify-center"
+              className="p-6 bg-dark-lighter rounded-lg border border-gray-dark relative min-h-[300px] flex flex-col items-center justify-center"
               variants={itemVariants}
             >
               {screenshot.url ? (
