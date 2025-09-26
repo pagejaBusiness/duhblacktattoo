@@ -4,6 +4,7 @@ import Herosection from "./components/Herosection";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
+import Reviews from "./components/Reviews";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
       </section>
       <section id="gallery">
         <Gallery />
+      </section>
+      <section id="reviews">
+        <Reviews />
       </section>
       <section id="contact">
         <Contact />

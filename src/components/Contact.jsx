@@ -90,9 +90,7 @@ export default function Contact() {
                   Horário de Funcionamento
                 </h3>
                 <p className="text-gray text-base leading-relaxed">
-                  {/* Seg-Sex: 12:00 - 20:00 */}
-                  <br />
-                  {/* Sáb: 10:00 - 18:00 */}
+                  Segunda a sábado: horário a combinar !
                 </p>
               </div>
             </div>
